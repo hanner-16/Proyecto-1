@@ -25,7 +25,7 @@ public class JuegoLetras {
         "Violin", "Trompeta", "Flauta", "Bajo", "arpa"};
 
     private static final char[] VOCALES = {'a', 'e', 'i', 'o', 'u'};
-private String seleccionado;
+    private String seleccionado;
     private char vocalIncompleta;
     public String user;
     private Component frame;
@@ -116,4 +116,50 @@ private String seleccionado;
         return null;
         
        
+}
+    
+
+    private void mostrarPalabraIncompleta() {
+        System.out.println("La palabra: " + seleccionado);
+    }
+
+    private void solicitarVocal() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Ingresa la vocal que crees que falta en la palabra: ");
+        String vocalStr = scanner.nextLine();
+        intentos++;
+        if (vocalStr.length() != 1) {
+            System.out.println("Debes ingresar solo una vocal.");
+        } else {
+            char vocal = vocalStr.charAt(0);
+            if (!esVocal(vocal)) {
+                System.out.println("Debes ingresar una vocal.");
+            } else if (vocal == vocalIncompleta) {
+                System.out.println("¡Adivinaste! La vocal que faltaba era la " + vocalIncompleta + ".");
+                aciertos++;
+            } else {
+                System.out.println("La vocal " + vocal + " no es la que falta en la palabra.");
+                fallos++;
+            }
+        }
+    }
+   
+    
+    private void mostrarResultados() {
+        System.out.println("Ha terminado tu juego "+user);
+        System.out.println("Intentos: " + intentos);
+        System.out.println("Aciertos: " + aciertos);
+        System.out.println("Fallos: " + fallos);
+    }
+    
+
+    private boolean esVocal(char letra) {
+        for (char vocal : VOCALES) {
+            if (vocal == letra) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
