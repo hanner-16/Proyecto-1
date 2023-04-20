@@ -6,8 +6,12 @@ package game;
 
 /**
  *
- * @author Hanner Fernando Sinisterra cod: 2122993-3743
- * @author Daniel Esteban Gallego cod: 2124305 -3743
+ * @author Hanner Fernando Sinisterra 
+ * cod:2122993-3743
+ * <hanner.sinisterra@correounivalle.edu.co>
+ * @author Daniel Esteban Gallego 
+ * <gallego.daniel@correounivalle.edu.co>
+ * cod: 2124305 -3743
  */
 
 
