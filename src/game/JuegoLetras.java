@@ -25,5 +25,46 @@ public class JuegoLetras {
         "Violin", "Trompeta", "Flauta", "Bajo", "arpa"};
 
     private static final char[] VOCALES = {'a', 'e', 'i', 'o', 'u'};
+private String seleccionado;
+    private char vocalIncompleta;
+    public String user;
+    private Component frame;
+    
+    public void jugar() {
+    System.out.println("¡Mini_1!");
+    
+    String Nombre_usuario = JOptionPane.showInputDialog("Introduce tu nombre, porfavor");
+    user=Nombre_usuario;
+    System.out.println("Hola "+ Nombre_usuario);
+    
+    System.out.println("Tu reto es completar la pablabra *-* ");
+    Scanner scanner = new Scanner(System.in);
+    boolean continuarJugando = true;
+    
+    while (continuarJugando) {
+        seleccionarPalabra();
+        mostrarPalabraIncompleta();
+        solicitarVocal();
+        
 
+        System.out.print("¿Quieres seguir jugando? (s/n) ");
+        String respuesta = scanner.nextLine();
+        if (respuesta.equalsIgnoreCase("n")) {
+            continuarJugando = false;
+        }
+    }
+     mostrarResultados();       
 }
+
+    private String[] seleccionarPalabra() {
+    Random random = new Random();
+    //Scanner tematica = new Scanner(System.in);
+    String[] themes = {"ANIMALES", "FRUTAS", "COLORES", "INSTRUMENTOS"};
+    int opcion = JOptionPane.showOptionDialog(frame,"Seleccione una temática:",
+                "Seleccionar temática",
+                JOptionPane.DEFAULT_OPTION,
+                JOptionPane.PLAIN_MESSAGE,
+                null,
+                themes,
+                themes[0]);    
+    }
