@@ -1,4 +1,3 @@
-
 package game;
 
 import java.awt.Component;
@@ -7,8 +6,9 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import java.util.Timer;
 import java.util.TimerTask;
+import javax.swing.JFrame;
 
-public class JuegoLetras {
+public class JuegoLetras extends JFrame {
     
     private int intentos = 0;
     private int aciertos = 0;
@@ -160,6 +160,19 @@ public class JuegoLetras {
             }
         }
         return false;
+    }
+    
+    public JuegoLetras()
+   {
+        jugar();
+        setTitle("Fuga_De_Letras");
+        setSize(500,500);
+        setLocationRelativeTo(null);
+        setResizable(false);
+        setVisible(true);
+        setLayout(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);  
+        
     }
 
 }

@@ -17,13 +17,9 @@ package game;
 
 public class Main {
 
-    public static void main(String[] args) {
-    
-
-        JuegoLetras m=new JuegoLetras();
-        m.jugar();
+    public static void main(String[] args) 
+    {
+        Menu x = new Menu();
     }
-
-    //Prueba
     
 }
